@@ -7,7 +7,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
         System.out.println(calculate(input));
-       // System.out.println(NumConvertor.RomanToArabic("L"));
+
     }
 
     public static String calculate(String input) {
@@ -42,14 +42,19 @@ public class Main {
         }
 
 
+        if(number1 < 1 || number2 < 1)
+        {
+            throw new IllegalStateException("Ошибка ввода, нужно вводить от 1 до 10" );
+        }
 
         if(number1 > 10 || number2 > 10)
         {
-            throw new IllegalStateException("Ошибка ввода, число не должно быть больше 10" );
+            throw new IllegalStateException("Ошибка ввода, нужно вводить от 1 до 10" );
         }
 
+
         char operator = input.charAt(num1.length());
-        int res = 0;
+        int res ;
 
 
         if (operator == '+')
